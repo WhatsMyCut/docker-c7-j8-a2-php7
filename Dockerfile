@@ -16,7 +16,7 @@ COPY phpinfo.php /usr/local/apache2/htdocs/vhosts/centos.local/htdocs/index.php
 # RUN ["/bin/sh", "-c", "/usr/local/dev/install-php-src.sh"]
 COPY 01-mpm.conf /etc/httpd/conf.d/01-mpm.conf
 COPY 999-centos.local.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
-RUN systemctl enable php-fpm
+RUN systemctl enable php-fpm; systemctl enable httpd;
 EXPOSE 80
 VOLUME ["/sys/fs/cgroup"]
 ENTRYPOINT [ "/usr/local/dev/docker-entrypoint.sh", "/bin/sh", "-c", "php -version" ]

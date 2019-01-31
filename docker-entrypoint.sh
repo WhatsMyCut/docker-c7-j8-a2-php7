@@ -11,7 +11,7 @@ passwd root
 chkconfig --list
 exec /usr/sbin/init
 systemctl restart autofs
-apachectl restart
+systemctl restart httpd
 systemctl list-unit-files > /usr/local/tmp/unit-files.rpt
 # run the command given as arguments from CMD
 eval "$@"
