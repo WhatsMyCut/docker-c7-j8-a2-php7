@@ -11,5 +11,6 @@ cd php-7.3.1;
 make;
 #make test;
 make install;
-/root/php-7.3.1/build/shtool install -c ext/phar/phar.phar /usr/local/php/bin;
+export PATH=/usr/local/php/bin:$PATH
+/php-7.3.1/build/shtool install -c ext/phar/phar.phar /usr/local/php/bin;
 ln -s -f phar.phar /usr/local/php/bin/phar
